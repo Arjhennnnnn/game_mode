@@ -9,4 +9,9 @@ class UserController extends Controller
     public function home(){
         return view('first_layout.home');
     }
+
+    public function show($id){
+        return 'Return Parameter'.$id;
+    }
+    
 }

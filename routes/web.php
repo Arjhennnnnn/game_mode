@@ -33,3 +33,8 @@ Route::get('/employee',function(){
 });
 
 
+Route::get('/show/{id}', [UserController::class, 'show']);
+
+
+
+
