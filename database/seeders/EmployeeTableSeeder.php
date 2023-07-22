@@ -14,5 +14,6 @@ class EmployeeTableSeeder extends Seeder
     {
         \App\Models\Employees::factory(20)->create();
 
+        
     }
 }

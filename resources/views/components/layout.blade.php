@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +9,7 @@
 </head>
 <body>
   <h1>Arjhen Grrrr</h1>
-  <h1>{{ $slot ?? '' }}</h1>
+  
+  <p>{{ $slot ?? '' }}</p>
 </body>
 </html>
