@@ -16,3 +16,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::redirect('/users', '/');
+
+Route::get('/home',function(){
+    return view('first_layout.home');
+});
+Route::get('/about',function(){
+    return view('first_layout.about');
+});
+
+Route::get('/employee',function(){
+    return view('first_layout.employee');
+});
+
+
