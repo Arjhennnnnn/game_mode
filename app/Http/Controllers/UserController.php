@@ -11,7 +11,12 @@ class UserController extends Controller
     }
 
     public function show($id){
-        return 'Return Parameter'.$id;
+
+        return view('first_layout.home')
+                ->with('id',$id)
+                ->with('name','Arjhen');
+
+
     }
     
 }
