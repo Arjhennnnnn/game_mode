@@ -1,5 +1,3 @@
-@component('components.layout')
-  @slot('page')
-      Home
-  @endslot
-@endcomponent
+<x-layout>
+  <h1>home page!</h1>
+</x-layout>

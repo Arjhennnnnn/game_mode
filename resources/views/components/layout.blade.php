@@ -8,6 +8,6 @@
 </head>
 <body>
   <h1>Arjhen Grrrr</h1>
-  <p>This Page is {{ $page }}</p>
+  <h1>{{ $slot ?? '' }}</h1>
 </body>
 </html>

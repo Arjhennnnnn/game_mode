@@ -1,6 +1,8 @@
 <?php
-
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +22,8 @@ Route::get('/', function () {
 
 Route::redirect('/users', '/');
 
-Route::get('/home',function(){
-    return view('first_layout.home');
-});
+Route::get('/home', [UserController::class, 'home']);
+
 Route::get('/about',function(){
     return view('first_layout.about');
 });
