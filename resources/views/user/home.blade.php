@@ -28,8 +28,7 @@
             <td>{{ $employee->last_name }}</td>
             <td>{{ $employee->job_title }}</td>
             <td>
-              <i class="fas fa-pen-to-square text-primary"></i>
-              <i class="fas fa-trash text-danger"></i>
+              <a href="/edit/employee/{{ $employee->id }}"><button class="btn btn-primary">View</button></a>
             </td>
           </tr>
         @endif

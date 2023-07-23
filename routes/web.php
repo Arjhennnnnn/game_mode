@@ -55,6 +55,14 @@ Route::post('/logout', [UserController::class, 'logout']);
 
 
 Route::post('/create/employee', [EmployeeController::class, 'store']);
+Route::get('/edit/employee/{id}', [EmployeeController::class, 'edit']);
+Route::put('/update/employee/{id}', [EmployeeController::class, 'update']);
+Route::delete('/delete/employee/{id}', [EmployeeController::class, 'destroy']);
+
+
+
+
+
 
 
 
