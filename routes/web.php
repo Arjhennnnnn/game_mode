@@ -41,26 +41,24 @@ Route::get('/employee',function(){
 });
 
 
-Route::get('/show/{id}', [UserController::class, 'show']);
+Route::controller(EmployeeController::class)->group(function(){
+    Route::post('/create/employee','store');
+    Route::get('/edit/employee/{id}','edit');
+    Route::put('/update/employee/{id}','update');
+    Route::delete('/delete/employee/{id}','destroy');
+
+});
 
 
-Route::post('/login/process', [UserController::class, 'process']);
-Route::post('/create', [UserController::class, 'create'])->middleware('guest');;
-
-
-Route::get('/register', [UserController::class, 'register']);
-Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
-Route::get('/user/home', [UserController::class, 'home'])->middleware('auth');
-Route::post('/logout', [UserController::class, 'logout']);
-
-
-Route::post('/create/employee', [EmployeeController::class, 'store']);
-Route::get('/edit/employee/{id}', [EmployeeController::class, 'edit']);
-Route::put('/update/employee/{id}', [EmployeeController::class, 'update']);
-Route::delete('/delete/employee/{id}', [EmployeeController::class, 'destroy']);
-
-
-
+Route::controller(UserController::class)->group(function(){
+    Route::get('/register', 'register');
+    Route::get('/login', 'login')->name('login')->middleware('guest');
+    Route::get('/user/home', 'home')->middleware('auth');
+    Route::post('/logout', 'logout');
+    Route::get('/show/{id}', 'show');
+    Route::post('/login/process', 'process');
+    Route::post('/create', 'create')->middleware('guest');
+});
 
 
 
