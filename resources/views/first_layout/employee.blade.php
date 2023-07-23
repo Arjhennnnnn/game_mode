@@ -1,3 +1,10 @@
+
 <x-layout>
-  <h1>Employee page!</h1>
+  @foreach($supervisors as $supervisor)
+    {{ $supervisor->first_name}}
+    {{ $supervisor->name}}
+
+    <br>
+
+  @endforeach
 </x-layout>

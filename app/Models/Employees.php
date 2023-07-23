@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Employees extends Model
 {
     use HasFactory;
+
+    // public function subordinates()
+    // {
+    //     return $this->hasMany(Employees::class, 'supervisor_id');
+    // }
 }
+    
