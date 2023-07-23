@@ -1,6 +1,11 @@
 @include('partials.__header')
 <x-navbar/>
-
+<x-modal/>
+<div class="row">
+  <div class="col-2 offset-8">
+    <button class="btn btn-primary bg-opacity-50 ms-2 mt-3" id="add_new">Add New Employee</button>
+  </div>
+</div>
 <div class="row mt-2">
   <div class="col-8 offset-2">
     <table class="table border border-secondary-25">

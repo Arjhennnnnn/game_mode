@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\EmployeeController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Employees;
 use App\Models\User;
@@ -44,12 +45,17 @@ Route::get('/show/{id}', [UserController::class, 'show']);
 
 
 Route::post('/login/process', [UserController::class, 'process']);
-Route::post('/create', [UserController::class, 'create']);
+Route::post('/create', [UserController::class, 'create'])->middleware('guest');;
 
 
 Route::get('/register', [UserController::class, 'register']);
-Route::get('/login', [UserController::class, 'login']);
-Route::get('/user/home', [UserController::class, 'home']);
+Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
+Route::get('/user/home', [UserController::class, 'home'])->middleware('auth');
+Route::post('/logout', [UserController::class, 'logout']);
+
+
+Route::post('/create/employee', [EmployeeController::class, 'store']);
+
 
 
 

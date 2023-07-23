@@ -25,7 +25,15 @@ class UserController extends Controller
           ->with(['employees' => $data]);
     }
 
+    public function logout(Request $request){
+      auth()->logout();
+      $request->session()->invalidate();
+      $request->session()->regenerateToken();
 
+      return redirect('/login')->with('message','Logout Successfully');
+    }
+
+    
     public function process(Request $request){
       $validate = $request -> validate([
         "email" => ['required'],

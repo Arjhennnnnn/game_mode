@@ -23,17 +23,14 @@
 
     <!-- Right elements -->
     <div class="d-flex align-items-center">
-      <!-- Icon -->
-      <a class="text-reset me-3" href="#">
-        <i class="fas fa-shopping-cart"></i>
-      </a>
-     
       @auth
         {{ Auth::user()->name }}
-      @else
-        <h1>AutoAuto</h1>
       @endauth
     </div>
+    <form action="/logout" method="POST">
+      @csrf
+      <button class="btn btn-primary ms-3" type="submit">Logout</button>
+    </form>
     <!-- Right elements -->
   </div>
   <!-- Container wrapper -->
