@@ -4,9 +4,9 @@
   <div class="col-4 offset-4 bg-secondary bg-opacity-50 rounded-5">
     <h1 class="text-center pt-2">Login</h1>
     <small class="ms-2">Create a new account <a href="/register">here</a></small>
-    <form class="py-3" method="POST" action="/login/process">
-      @csrf
+    <form class="py-3" method="post" action="/login/process">
       <!-- Email input -->
+      @csrf
       <div class="form-outline mb-4">
         <input type="email" name="email" class="form-control" />
         <label class="form-label" for="form1Example1">Email address</label>

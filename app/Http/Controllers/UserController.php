@@ -20,6 +20,7 @@ class UserController extends Controller
 
     
     public function home(){
+      $this->middleware('auth');
       $data = Employees::all();
       return view('user.home')
           ->with(['employees' => $data]);
@@ -36,7 +37,7 @@ class UserController extends Controller
     
     public function process(Request $request){
       $validate = $request -> validate([
-        "email" => ['required'],
+        "email" => ['required','email'],
         "password" => 'required',
       ]);
       if(auth()->attempt($validate)){
@@ -44,6 +45,22 @@ class UserController extends Controller
         return redirect('/user/home')->with('message','Welcome Back');
       }
     }
+
+  //   public function process(Request $request){
+  //     $validated = $request->validate([
+
+  //         "password" => 'required'
+  //     ]);
+  //     if(auth()->attempt($validated)){
+  //         $request->session()->regenerate();
+  //         return redirect('/employee',['user'->auth()->user()])->with('message','welcomeback');
+  //     }
+  //     return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
+    
+  // }
+
+
+
 
     public function create(Request $request){
       $validate = $request -> validate([

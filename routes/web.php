@@ -43,7 +43,7 @@ Route::get('/employee',function(){
 
 Route::controller(EmployeeController::class)->group(function(){
     Route::post('/create/employee','store');
-    Route::get('/edit/employee/{id}','edit');
+    Route::get('/employeeedit/{id}','edit')->name('employee.edit');
     Route::put('/update/employee/{id}','update');
     Route::delete('/delete/employee/{id}','destroy');
 
@@ -53,10 +53,10 @@ Route::controller(EmployeeController::class)->group(function(){
 Route::controller(UserController::class)->group(function(){
     Route::get('/register', 'register');
     Route::get('/login', 'login')->name('login')->middleware('guest');
-    Route::get('/user/home', 'home')->middleware('auth');
+    Route::get('/user/home','home')->middleware('auth');
     Route::post('/logout', 'logout');
     Route::get('/show/{id}', 'show');
-    Route::post('/login/process', 'process');
+    Route::post('/login/process','process');
     Route::post('/create', 'create')->middleware('guest');
 });
 
